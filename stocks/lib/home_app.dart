@@ -21,6 +21,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       onTap: () => _onSearch(context),
       appBar: AppBar(
         centerTitle: true,
+        // ignore: unnecessary_null_comparison
         title: Text(title == null ? "Search" : title),
         actions: [
           Padding(

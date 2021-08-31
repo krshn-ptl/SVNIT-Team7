@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:stocks/stockspage.dart';
 
 import 'home_app.dart';
 
@@ -25,15 +27,23 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  late String _text="";
+  late String _text = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HomeAppBar(
         title: _text,
-        onSelect: (text)=> setState(()=> _text =text),
+        onSelect: (text) => setState(() => _text = text),
       ),
-      body: Text(_text==null? "Home ": "Searched \"$_text\""),
+      body: Front( _text),
     );
+  }
+}
+
+Widget Front(String text) {
+  if (text == "") {
+    return Text("Home");
+  } else {
+    return Stockpage(symbols: text);
   }
 }
