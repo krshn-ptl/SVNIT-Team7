@@ -36,6 +36,7 @@ You need to change localhost to your pc ip address to get result
 -   Live updates of charts
 -   Charts by symbols available
 -   Charts with date range available
+-   Displays information of the company
 
 ### Web application:
 
