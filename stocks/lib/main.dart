@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:stocks/stockspage.dart';
+import 'stockspage.dart';
 
 import 'home_app.dart';
 
@@ -42,7 +41,7 @@ class _HomepageState extends State<Homepage> {
 
 Widget Front(String text) {
   if (text == "") {
-    return Text("Home");
+    return Text("data");
   } else {
     return Stockpage(symbols: text);
   }

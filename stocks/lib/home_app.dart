@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'backend.dart';
 import 'search_historyService.dart';
+import 'package:http/http.dart' as http;
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   BackendService _backendService = BackendService();
@@ -29,7 +30,8 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             child: Icon(Icons.search),
           ),
         ],
-      ), key: Key(""),
+      ),
+      key: Key(""),
     );
   }
 
@@ -74,7 +76,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 /// This is the custom search delegate
 class MySearch extends SearchDelegate<String> {
   final Function getBackendSuggestions, getRecentSuggestions, onSelect;
-  Widget _lastFutureBuilder =SizedBox.shrink(); // this exists because we do not need a new async call (backend or recent) for every change in the ui
+  Widget _lastFutureBuilder = SizedBox
+      .shrink(); // this exists because we do not need a new async call (backend or recent) for every change in the ui
 
   MySearch({
     required this.getBackendSuggestions,
